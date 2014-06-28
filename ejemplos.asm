@@ -34,9 +34,10 @@ SHR_rutine:
 
 ROL_rutine:
 	xor eax, eax
-	mov al, 9
-	rol al, 1
-	push ax
+	xor al, al
+	mov al, 192
+	rol al, 2
+	push eax
 	push nummsg
 	call printf
 	add esp, 4
