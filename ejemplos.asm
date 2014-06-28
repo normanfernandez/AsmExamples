@@ -2,7 +2,6 @@
 ;# Ejemplos de uso de SAL, SHR, ROL 	 #
 ;#########################################
 
-
 global main
 extern printf
 extern scanf
@@ -21,6 +20,7 @@ SAL_rutine:
 	push eax
 	push nummsg
 	call printf
+	add esp, 4
 	jmp SHR_rutine
 
 SHR_rutine:
@@ -29,14 +29,17 @@ SHR_rutine:
 	push eax
 	push nummsg
 	call printf
+	add esp, 4
 	jmp ROL_rutine
 
 ROL_rutine:
-	mov eax, 5
-	rol eax, 1
-	push eax
+	xor eax, eax
+	mov al, 9
+	rol al, 1
+	push ax
 	push nummsg
 	call printf
+	add esp, 4
 	jmp end
 end:
 	mov eax, 1
